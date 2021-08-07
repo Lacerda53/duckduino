@@ -39,6 +39,8 @@
 #define KEY_MUTE        0x7F
 #define KEY_VOL_UP      0x80
 #define KEY_VOL_DOWN    0x81
+#define KEY_UNDERLINE   0x2D
+#define KEY_PLUS        0x2E
 #define KEY_NONE 0x37
 
 uint8_t buf[8] = { 0 }; /* Keyboard report buffer */
@@ -165,6 +167,14 @@ void setup() {
       }
       else if (*txt == ',') {
         buf[2] = 0x36;
+      }
+      else if (*txt == '_') {
+        buf[0] = KEY_LEFT_SHIFT;
+        buf[2] = KEY_UNDERLINE;
+      }
+      else if (*txt == '+') {
+        buf[0] = KEY_LEFT_SHIFT;
+        buf[2] = KEY_PLUS;
       }
       else {
         buf[2] = KEY_NONE;
