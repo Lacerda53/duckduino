@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Plug ARDUINO UNO into your PC with the two pins connected."
 read
 echo "Remove the jumper that connect pins."
